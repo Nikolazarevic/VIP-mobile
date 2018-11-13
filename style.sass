@@ -1,0 +1,645 @@
+$font-stack: 'Playfair Display', serif
+$font-stack2: 'Audiowide'
+$h4: 'Gloria Hallelujah', cursive
+$mainColor: #e3004a
+$hoverMenu: #f67800
+$mainColor2: #333333
+$h2size: 38px
+$contentSize: 18px
+*
+	margin: 0
+	padding: 0
+.headerHide
+	width: 100%
+	height: 44px
+	display: grid
+	background-color: $mainColor
+	grid-template-columns: repeat(10, 1fr)
+	grid-template-rows: repeat(1, 1fr)
+	transition: .2s
+	.headerMenuHide
+		grid-column: 2/10
+		grid-row: 1/2
+		display: grid
+		grid-template-columns: repeat(16, 1fr)
+		grid-template-rows: repeat(1, 1fr)
+		white-space: nowrap
+		grid-column-gap: 5px
+		.hideMenu 
+			text-align: center
+			margin: auto
+			color: #ffffff
+			font-size: 18px
+			p
+				font-family: $font-stack
+				color: #ffffff
+				cursor: pointer
+				&:hover
+					color: $mainColor2
+		.podrska
+			grid-column: 13/14
+			text-align: center
+			margin: auto
+			color: #ffffff
+			font-size: 18px
+			p
+				font-family: $font-stack
+				color: #ffffff
+				cursor: pointer
+				&:hover
+					color: $mainColor2
+		.search
+			grid-column: 14/15
+			text-align: center
+			margin: auto
+			color: #ffffff
+			.icon
+				background: transparent
+				width: 100%
+				height: 100%
+				outline: none
+				border: none
+				font-size: 18px
+				color: #ffffff
+				cursor: pointer
+				&:hover
+					color: $mainColor2
+		.en
+			grid-column: 15/16
+			text-align: center
+			margin: auto
+			color: #ffffff
+			p
+				font-size: 18px
+				cursor: pointer
+				&:hover
+					color: $mainColor2
+.header 
+	width: 100%
+	height: 80px
+	background-color: #ffffff
+	display: grid
+	grid-template-columns: repeat(10, 1fr)
+	grid-template-rows: repeat(1, 1fr)
+	transition: .2s
+	box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.35)
+	.shrink
+		transition: all ease 0.1s
+		font-size: 18px
+	.toggle
+		width: 100%
+		padding: 10px 20px
+		box-sizing: border-box
+		color: #000000
+		display: none
+	.innerHeader
+		grid-column: 2/10
+		grid-row: 1/2
+		display: grid
+		grid-template-columns: repeat(16, 1fr)
+		grid-template-rows: repeat(1, 1fr)
+		.logo 
+			grid-column: 1/3
+			grid-row: 1/2
+			align-self: center
+			img
+				cursor: pointer
+		.navBar 
+			grid-column: 6/12
+			display: grid
+			grid-template-columns: repeat(5, 1fr)
+			grid-template-rows: repeat(4, 1fr)
+			white-space: nowrap
+		.menu 
+			grid-row: 1/5
+			text-align: center
+			display: grid
+			position: relative
+			&:before 
+				content: ''
+				position: absolute
+				left: 15px
+				right: 15px
+				bottom: 15px
+				border-bottom: 3px solid $mainColor
+				transform: scaleX(0)
+				transition: .5s
+				opacity: 1
+				z-index: 1
+			&:hover
+				&:before
+					transform: scaleX(1)
+					transition: .5s
+			p
+				font-weight: bold
+				font-family: $font-stack
+				margin: auto
+				color: $mainColor2
+				font-size: 18px
+				&:hover 
+					color: $hoverMenu
+					cursor: pointer
+		.login-store 
+			grid-column: 14/17
+			display: grid
+			grid-template-columns: (2, minmax(100px, auto))
+			grid-template-rows: repeat(4, 1fr)
+			grid-column-gap: 20px
+			p 
+				//font-weight: bold
+				font-size: 18px
+				margin: auto
+			.login 
+				grid-column: 1/2
+				grid-row: 2/4
+				border: 2px solid $mainColor2
+				border-radius: 20px
+				background-color: transparent
+				outline: none
+				cursor: pointer
+				&:hover 
+					color: #f67800
+					border: 2px solid #f67800
+			.store
+				@extend .login
+				grid-column: 2/3
+#container
+	display: grid
+	grid-template-columns: repeat(5, 1fr)
+	grid-template-rows: 900px 705px 2000px 705px 600px
+	width: 100%
+	margin: 0 auto
+	font-size: 30px
+	grid-row-gap: 50px
+	.decjaZona  
+		grid-column: 1/6 
+		grid-row: 1/2 
+		display: grid 
+		grid-template-columns: repeat(2, 1fr) 
+		grid-template-rows: repeat(8, 1fr)
+		margin-top: 50px
+		.topLeft  
+			grid-column: 1/2 
+			grid-row: 1/5 
+			display: grid 
+			grid-template-columns: repeat(8, 1fr) 
+			grid-template-rows: repeat(10, 1fr) 
+			background-color: #ffffff
+			color: $mainColor2 
+			h2  
+				font-family: $font-stack
+				font-size: $h2size 
+				grid-column: 3/7 
+				grid-row: 2/3 
+				text-align: center 
+			span   
+				grid-column: 3/7 
+				grid-row: 3/4 
+				text-align: center 
+				font-weight: bold 
+				font-size: 2em 
+			p
+				font-weight: bold
+				font-family: $font-stack
+				font-size: $contentSize
+				grid-column: 2/8 
+				grid-row: 5/8  
+				text-align: center
+			 
+			.reg  
+				background-color: transparent 
+				grid-column: 4/6 
+				grid-row: 9/10 
+				outline: none
+				border: 2px solid $mainColor2
+				cursor: pointer
+				p 
+					font-weight: bold
+					font-size: 18px 
+					color: $mainColor2 
+				&:hover  
+					background-color: $mainColor
+					transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s
+					border: none
+					p
+						color: #ffffff
+		.topRight  
+			grid-column: 2/3 
+			grid-row: 1/5 
+			display: grid 
+			background-color: #ffffff 
+			grid-template-columns: repeat(20, 1fr) 
+			grid-template-rows: repeat(10, 1fr) 
+			background-image: url("Imagesv/famili.png") 
+			background-size: cover 
+			.sec1  
+				grid-column: 3/7 
+				grid-row: 2/9 
+				background: rgba(255, 255, 255,.8) 
+				border-radius: 5px 
+				display: grid 
+				grid-template-columns: repeat(5, 1fr) 
+				grid-template-rows: repeat(10, 1fr) 
+				i  
+					grid-column: 3/4 
+					grid-row: 2/3 
+					font-size: 30px 
+					color: $mainColor2
+				p  
+					padding: 0 
+					font-size: 17px 
+					grid-column: 2/5 
+					grid-row: 5/9 
+					text-align: center 
+					color: $mainColor2
+			.sec2
+				@extend .sec1
+				grid-column: 9/13 
+			.sec3
+				@extend .sec1
+				grid-column: 15/19 
+		.downLeft  
+			grid-column: 1/2 
+			grid-row: 5/9 
+			display: grid 
+			grid-template-columns: repeat(12, 1fr) 
+			grid-template-rows: repeat(10, 1fr) 
+			background-color: #ffffff 
+			.phoneSec  
+				grid-column: 4/10 
+				grid-row: 1/11 
+				img  
+					width: 100% 
+					height: 100% 
+		.downRight  
+			grid-column: 2/3 
+			grid-row: 5/9 
+			display: grid 
+			grid-template-columns: repeat(10, 1fr) 
+			grid-template-rows: repeat(16, 1fr) 
+			background-color: $mainColor 
+			h2  
+				font-family: $font-stack
+				font-size: $h2size 
+				color: #ffffff 
+				grid-column: 2/10 
+				grid-row: 4/7 
+				text-align: center 
+				font-weight: bold
+			.download  
+				color: #ffffff 
+				grid-column: 4/8 
+				grid-row: 12/14 
+				text-align: center 
+				border: 2px solid #ffffff 
+				// border-radius: 3px 
+				display: grid 
+				grid-template-columns: repeat(10, 1fr) 
+				grid-template-rows: repeat(1, 1fr) 
+				transition: .5s 
+				&:hover  
+					background-color: #ffffff 
+					cursor: pointer
+					p
+						color: $mainColor
+					i
+						color: $mainColor
+				i  
+					font-size: 22px 
+					//color: #ffffff 
+					grid-column: 1/3 
+					grid-row: 1/2 
+					margin: auto 
+				p  
+					font-family: font-stack
+					font-weight: bold
+					font-size: 18px 
+					//color: #eaeae1 
+					grid-column: 3/11 
+					grid-row: 1/2 
+					margin: auto
+	.magicniGlas
+		grid-row: 2/3
+		grid-column: 1/6	
+		background-image: url("Imagesv/magic_voice2.png")
+		background-size: cover
+		background-attachment: fixed
+		display: grid
+		grid-template-columns: repeat(10, 1fr)
+		grid-template-rows: repeat(1, 1fr)
+		.innerMagicniGlas
+			grid-row: 1/2
+			grid-column: 2/10
+			display: grid
+			grid-template-rows: repeat(16, 1fr)
+			grid-template-columns: repeat(10, 1fr)
+			text-align: center
+			.titleMagicniGlas
+				grid-row: 3/5
+				grid-column: 3/9
+				h2
+					color: #ffffff
+					font-size: 38px
+					font-family: $font-stack
+					font-weight: bold
+			.contentMagicniGlas
+				grid-row: 6/13
+				grid-column: 3/9
+				p
+					color: #ffffff
+					font-size: 30px
+					font-family: $font-stack
+					font-weight: bold
+					//white-space: 10px
+					line-height: 2
+			.btnMagicniGlas
+				grid-row: 14/15
+				grid-column: 5/7
+				outline: none
+				border: none
+				background-color: #ffffff
+				cursor: pointer
+				p
+					color: $mainColor
+					font-size: 18px
+					font-weight: bold
+				&:hover
+					background-color: $mainColor
+					transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s
+					border: none
+					p
+						color: #ffffff
+	.VPN
+		grid-row: 3/4
+		grid-column: 1/6
+		display: grid
+		grid-template-columns: repeat(10, 1fr)
+		grid-template-rows: repeat(1, 1fr)
+		.innerVPN
+			grid-row: 1/2
+			grid-column: 2/10
+			display: grid
+			grid-template-rows: repeat(3, 1fr)
+			grid-template-columns: repeat(1, 1fr)
+			overflow: hidden
+			.vipDrop
+				grid-row: 1/2
+				grid-column: 1/2
+				//background-color: lightblue
+				display: grid
+				grid-template-columns: repeat(2, 1fr)
+				grid-template-rows: repeat(1, 1fr)
+				overflow: hidden
+				.imgVipDrop
+					grid-column: 1/2
+					grid-row: 1/2
+					display: grid
+					grid-template-columns: repeat(16, 1fr)
+					grid-template-rows: repeat(16, 1fr)
+					overflow: hidden
+					.images
+						grid-column: 2/16
+						grid-row: 2/16
+						img
+							// overflow: hidden
+							width: 100%
+							height: 100%
+				.aboutVipDrop
+					grid-column: 2/3
+					grid-row: 1/2
+					//background-color: blue
+					overflow: hidden
+					display: grid
+					grid-template-columns: repeat(16, 1fr)
+					grid-template-rows: repeat(16, 1fr)
+					.innerAboutVipDrop
+						grid-row: 2/16
+						grid-column: 3/15
+						display: grid
+						grid-template-rows: repeat(16, 1fr)
+						grid-template-columns: repeat(10, 1fr)
+						text-align: left
+						//align-self: center
+						overflow: hidden
+						.titleVipDrop
+							grid-row: 4/5
+							grid-column: 1/11
+							h2
+								font-size: 38px
+								font-family: $font-stack
+								font-weight: bold
+							h4
+								font-size: 18px
+								font-family: $h4
+						.contentVipDrop
+							grid-row: 6/11
+							grid-column: 1/11
+							p
+								font-size: 18px
+								font-family: $font-stack
+								font-weight: bold
+								//white-space: 10px
+								line-height: 2
+						.btnVipDrop
+							grid-row: 13/14
+							grid-column: 1/4
+							outline: none
+							background: transparent
+							border: 2px solid $mainColor2
+							cursor: pointer
+							p
+								font-size: 18px
+								font-weight: bold
+							&:hover
+								background-color: $mainColor
+								transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s
+								border: none
+								p
+									color: #ffffff
+			.playRadio
+				@extend .vipDrop
+				grid-row: 2/3
+				.imgPlayRadio
+					@extend .imgVipDrop
+					grid-column: 2/3
+				.aboutPlayRadio
+					@extend .aboutVipDrop
+					grid-column: 1/2
+					.innerAboutPlayRadio
+						@extend .innerAboutVipDrop
+						.titlePlayRadio
+							@extend .titleVipDrop
+						.contentPlayRadio
+							@extend .contentVipDrop
+						.btnPlayRadio
+							@extend .btnVipDrop
+			.novinarnica
+				@extend .vipDrop
+				grid-row: 3/4
+				.imgNovinarnica
+					@extend .imgVipDrop
+				.aboutNovinarnica
+					@extend .aboutVipDrop
+					.innerAboutNovinarnica
+						@extend .innerAboutVipDrop
+						.titleNovinarnica
+							@extend .titleVipDrop
+						.contentNovinarnica
+							@extend .contentVipDrop
+						.btnNovinarnica
+							@extend .btnVipDrop
+	.cuvarkuca
+		grid-row: 4/5
+		grid-column: 1/6
+		background-image: url("Imagesv/enterijer2.png")
+		background-size: cover
+		background-attachment: fixed
+		display: grid
+		grid-template-columns: repeat(10, 1fr)
+		grid-template-rows: repeat(1, 1fr)
+		.innerCuvarkuca
+			grid-column: 7/10
+			grid-row: 1/2
+			display: grid
+			grid-template-columns: repeat(10, 1fr)
+			grid-template-rows: repeat(10, 1fr)
+			overflow: hidden
+			.contentCuvarkuca
+				grid-row: 3/9
+				grid-column: 2/11
+				background-color: rgba( 255, 255, 255, .8)
+				display: grid
+				grid-template-columns: repeat(10, 1fr)
+				grid-template-rows: repeat(10, 1fr)
+				.titleCuvarkuca
+					text-align: center
+					grid-row: 2/4
+					grid-column: 1/11
+					//display: grid
+					//grid-template-rows: repeat(2, 1fr)
+					//background-color: purple
+					//grid-gap: 20px
+					h2
+						//grid-row: 1/2
+						font-size: 38px
+						font-family: $font-stack
+						color: $mainColor2
+					h4
+						font-size: 18px
+						font-family: $h4
+					// span
+					// 	grid-row: 2/3
+					// 	align-self: center
+				.descriptionCuvarkuca
+					grid-row: 5/8
+					grid-column: 3/9
+					text-align: center
+					p
+						font-size: 18px
+						font-family: $font-stack
+						font-weight: bold
+				.btnCuvarkuca
+					grid-row: 9/10
+					grid-column: 4/8
+					background: transparent
+					border: 2px solid $mainColor2
+					cursor: pointer
+					p
+						font-size: 18px
+						font-weight: bold
+					&:hover
+						background-color: $mainColor
+						transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s
+						border: none
+						p
+							color: #ffffff
+	.usluge
+		//background-color: blue
+		grid-row: 5/6
+		grid-column: 1/6
+		display: grid
+		grid-template-columns: repeat(10, 1fr)
+		grid-template-rows: repeat(1, 1fr)
+		.innerUsluge
+			grid-row: 1/2
+			grid-column: 2/10
+			display: grid
+			grid-template-rows: repeat(16, 1fr)
+			grid-template-columns: repeat(3, 1fr)
+			//background-color: pink
+			overflow: hidden
+			.racunPlacanje
+				grid-row: 3/15
+				grid-column: 1/2
+				display: grid
+				grid-template-rows: repeat(1, 1fr)
+				grid-template-columns: repeat(16, 1fr)
+				.innerRacunPlacanje
+					grid-row: 1/2
+					grid-column: 2/16
+					//background-color: red
+					display: grid
+					grid-template-rows: repeat(16, 1fr)
+					grid-template-columns: repeat(16, 1fr)
+					overflow: hidden	
+					.imgRacunPlacanje
+						grid-column: 1/17
+						grid-row: 4/11
+						img
+							//overflow: hidden
+							width: 100%
+							height: 100%
+					.titleRacunPlacanje
+						grid-column: 1/17
+						grid-row: 1/3
+						border-bottom: 2px dotted rgba(154, 154, 154, 1)
+						h1
+							font-size: 30px
+					.contentRacunPlacanje
+						grid-column: 1/17
+						grid-row: 12/16
+						p
+							font-size: 18px
+					.btnRacunPlacanje
+						grid-row: 16/17
+						grid-column: 1/8
+						background: transparent
+						border: 2px solid $mainColor2
+						cursor: pointer
+						p
+							font-size: 18px
+							font-weight: bold
+						&:hover
+							background-color: $mainColor
+							transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s
+							border: none
+							p
+								color: #ffffff
+			.osiguranje
+				@extend .racunPlacanje
+				grid-column: 2/3
+				.innerOsiguranje
+					@extend .innerRacunPlacanje	
+					.imgOsiguranje
+						@extend .imgRacunPlacanje
+					.titleOsiguranje
+						@extend .titleRacunPlacanje
+					.contentOsiguranje
+						@extend .contentRacunPlacanje
+					.btnOsiguranje
+						@extend .btnRacunPlacanje
+			.servis
+				@extend .racunPlacanje
+				grid-column: 3/4
+				.innerServis
+					@extend .innerRacunPlacanje	
+					.imgServis
+						@extend .imgRacunPlacanje
+					.titleServis
+						@extend .titleRacunPlacanje
+					.contentServis
+						@extend .contentRacunPlacanje
+					.btnServis
+						@extend .btnRacunPlacanje
+
+
